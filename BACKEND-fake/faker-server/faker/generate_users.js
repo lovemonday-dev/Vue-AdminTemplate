@@ -1,13 +1,13 @@
-const faker = require('faker');
+const {faker} = require('@faker-js/faker');
 const fs = require('fs');
 
 function generateUsers() {
     let users = [];
 
     for (let id = 1; id <= 25; id++) {
-        let userName = faker.internet.userName();
-        let firstName = faker.name.firstName();
-        let lastName = faker.name.lastName();
+        let userName = faker.internet.username();
+        let firstName = faker.person.firstName();
+        let lastName = faker.person.lastName();
         let avatar = faker.image.avatar();
         let email = faker.internet.email();
 
@@ -41,18 +41,18 @@ module.exports = generateUsers;
 //------------------------------------------------------------------second
 //generate dummy data without using a for loop
 //
-//let faker = require('faker');
+//let {faker} = require('@faker-js/faker');
 //let fs = require('fs');
 //var _ = require("lodash");
 //
 //const generateUser = () => {
 //    return {
-//        id: faker.random.uuid(),
-//        userName: faker.internet.userName();
-//        firstName: faker.name.firstName();
-//        lastName: faker.name.lastName();
+//        id: faker.string.uuid(),
+//        userName: faker.internet.username();
+//        firstName: faker.person.firstName();
+//        lastName: faker.person.lastName();
 //        avatar: faker.image.avatar(),
-//        phone: faker.phone.phoneNumber(),
+//        phone: faker.phone.number(),
 //        email: faker.internet.email(),
 //    };
 //};

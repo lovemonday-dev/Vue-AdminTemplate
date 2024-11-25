@@ -22,7 +22,7 @@
                    <div slot="calloutText">
                        <div class="attachment-block">
                            Documentation:
-                           <a href="https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html" target="_blank" class="text-success">Faker</a> - AND -
+                           <a href="https://fakerjs.dev" target="_blank" class="text-success">Faker</a> - AND -
                            <a href="https://github.com/typicode/json-server" target="_blank" class="text-success"> JSON Server </a> - AND -
                            <a href="http://vuejs-templates.github.io/webpack/proxy.html" target="_blank" class="text-success"> API Proxy</a>
                        </div>
