@@ -1,13 +1,13 @@
 // get fake data without save in db.json and send by api/services & store(modules/products.js) to table in src/views/examples/APIExample.vue
 // first: run 'faker' script in package.json
-const faker = require('faker');
+const {faker} = require('@faker-js/faker');
 let productId = 1;
 class FakeProduct {
   constructor () {
     this.id = productId++;
     let fc = faker.commerce;
     this.name = fc.productName();
-    this.color = fc.color();
+    this.color = faker.color.human();
     this.department = fc.department();
     this.price = fc.price();
     this.adjective = fc.productAdjective();

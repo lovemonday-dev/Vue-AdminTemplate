@@ -1,27 +1,26 @@
 module.exports = function() {
-    var faker = require("faker");
-    //var _ = require("lodash");
+    var {faker} = require("@faker-js/faker");
 
     return {
-        people: _.times(100, function(n) {
+        people: faker.helpers.multiple(function(_, n) {
             return {
                 id: n + 1,
-                name: faker.name.findName(),
+                name: faker.person.fullName(),
                 avatar: faker.image.avatar(),
-                street: faker.address.streetAddress(),
-                city: faker.address.city(),
-                zipCode: faker.address.zipCode(),
-                stateAbbr: faker.address.stateAbbr(),
-                phone: faker.phone.phoneNumber(),
+                street: faker.location.streetAddress(),
+                city: faker.location.city(),
+                zipCode: faker.location.zipCode(),
+                stateAbbr: faker.location.state({abbreviated: true}),
+                phone: faker.phone.number(),
                 email: faker.internet.email(),
-                department: _.sample(["Customer Support", "Engineering", "Sales", "Finance", "Marketing", "Production",
+                department: faker.helpers.arrayElement(["Customer Support", "Engineering", "Sales", "Finance", "Marketing", "Production",
                                       "R&D", "Human Resource Management"]),
-                jobs: _.sample(['analyst', 'economist', 'Secretary', 'management board', 'wholesale distributing manager',
+                jobs: faker.helpers.arrayElement(['analyst', 'economist', 'Secretary', 'management board', 'wholesale distributing manager',
                 'export sales manager', 'sales manager', 'sales representative', 'service engineer', 'purchasing assistent',
                 'assistent', 'CEO (Chief Executive Officer)', 'treasurer, CFO (Chief Financial Officer)', 'warehouse worker',
                 'warehouse manager', 'service engineer', 'commercial agent', 'co-director', 'managing director', 'director general',
                 'purchasing manager', 'buyer', 'director of boards'])
             };
-        })
+        }, {count: 100})
     };
 };
